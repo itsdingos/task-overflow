@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-:root {
+@theme inline {
   /* Brand */
-  --color-primary: #6366F1;
-  --color-secondary: #A78BFA;
+  --color-primary: #2da856;
+  --color-secondary: #2e755a;
 
   /* Backgrounds */
   --color-background: #0F111A;
@@ -21,4 +21,6 @@
   --color-warning: #F59E0B;
   --color-error: #EF4444;
   --color-info: #3B82F6;
+
+  --font-sans: var(--font-geist)
 }
