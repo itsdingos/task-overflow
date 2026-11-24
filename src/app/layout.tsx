@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`h-full ${geist.variable}`}
     >
       <body className="min-h-full flex justify-center bg-background font-sans">
-        <div className="min-w-11/12 rounded-4xl bg-surface flex justify-between items-center overflow-hidden">
+        <div className="min-w-full rounded-4xl bg-surface flex justify-between items-center overflow-hidden shadow-2xl shadow-black">
           <SideBar />
           {children}
         </div>

@@ -1,44 +1,51 @@
 'use client';
 
 import SidebarItem from "./SidebarItem";
+import { NotebookPen, Calendar, Star, CalendarClock, CheckCheck, FolderBookmark } from "lucide-react";
 
 const SidebarItens = [
   {
     href: "/",
-    label: "Tasks"
+    label: "Tasks",
+    icon: NotebookPen
   },
   {
     href: "/today",
-    label: "Today"
+    label: "Today",
+    icon: Calendar
   },
   {
     href: "/important",
-    label: "Important"
-  },
-  {
-    href: "/week",
-    label: "This Week"
+    label: "Important",
+    icon: Star,
   },
   {
     href: "/upcoming",
-    label: "Upcoming"
+    label: "Upcoming",
+    icon: CalendarClock
   },
   {
     href: "/completed",
-    label: "Completed"
+    label: "Completed",
+    icon: CheckCheck
   },
 ]
 
 function Sidebar() {
   return (
-    <aside className="flex flex-col bg-surface-elevated
-      min-w-64 min-h-full p-4 items-center
-      border-r-2 border-r-border">
-      {
-        SidebarItens.map(({ href, label }) => {
-          return <SidebarItem key={href} href={href} label={label} />;
-        })
-      }
+    <aside className="min-h-full p-8 bg-surface-elevated border-r-2 border-r-border">
+      <div className="text-2xl font-bold flex items-center justify-center mt-4 mx-4 mb-8 text-primary">
+        <FolderBookmark className="mr-4" size={48}/>
+        Task Overflow
+      </div>
+      <div className="flex flex-col items-center gap-y-1">
+        {
+          SidebarItens.map(({ href, label, icon }) => {
+            return <SidebarItem key={href} href={href} label={label} icon={icon} />;
+          })
+        }
+      </div>
+      <hr className="w-full h-2 text-border my-10" />
     </aside>
   )
 }
