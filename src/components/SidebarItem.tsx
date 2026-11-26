@@ -38,7 +38,7 @@ function SidebarItem({ href, label, icon }: SidebarItemProps) {
         }
       `}
     >
-      {Icon && <Icon className="mr-2 text-primary" />}
+      {Icon && <Icon className="mr-2 text-primary theme-colors" />}
       {label}
     </Link>
   )

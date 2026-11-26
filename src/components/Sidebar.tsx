@@ -1,12 +1,23 @@
 'use client';
 
 import SidebarItem from "./SidebarItem";
-import { NotebookPen, Calendar, Star, CalendarClock, CheckCheck, FolderBookmark } from "lucide-react";
+import { NotebookPen, Calendar, Star, CalendarClock, CheckCheck, FolderBookmark, LucideIcon, ChartLine } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+
+interface SidebarProps {
+  href: string;
+  label: string;
+  icon: LucideIcon
+}
 
 const SidebarItens = [
   {
     href: "/",
+    label: "Dashbord",
+    icon: ChartLine
+  },
+  {
+    href: "/tasks",
     label: "Tasks",
     icon: NotebookPen
   },
@@ -30,11 +41,11 @@ const SidebarItens = [
     label: "Completed",
     icon: CheckCheck
   },
-]
+] satisfies SidebarProps[];
 
 function Sidebar() {
   return (
-    <aside className="min-h-full p-8 bg-surface-elevated border-r-2 border-r-border theme-colors">
+    <aside className="min-h-full p-8 bg-surface-elevated border-r-2 border-r-border theme-colors flex flex-col">
       <div className="text-2xl font-bold flex items-center justify-center mt-4 mx-4 mb-8 text-primary theme-colors">
         <FolderBookmark className="mr-4" size={48}/>
         Task Overflow
@@ -48,7 +59,7 @@ function Sidebar() {
       </div>
       <hr className="w-full h-2 text-border my-10 theme-colors" />
 
-      <ThemeToggle />
+      <ThemeToggle className="mt-auto self-end" />
     </aside>
   )
 }
