@@ -2,6 +2,7 @@
 
 import SidebarItem from "./SidebarItem";
 import { NotebookPen, Calendar, Star, CalendarClock, CheckCheck, FolderBookmark } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const SidebarItens = [
   {
@@ -33,8 +34,8 @@ const SidebarItens = [
 
 function Sidebar() {
   return (
-    <aside className="min-h-full p-8 bg-surface-elevated border-r-2 border-r-border">
-      <div className="text-2xl font-bold flex items-center justify-center mt-4 mx-4 mb-8 text-primary">
+    <aside className="min-h-full p-8 bg-surface-elevated border-r-2 border-r-border theme-colors">
+      <div className="text-2xl font-bold flex items-center justify-center mt-4 mx-4 mb-8 text-primary theme-colors">
         <FolderBookmark className="mr-4" size={48}/>
         Task Overflow
       </div>
@@ -45,7 +46,9 @@ function Sidebar() {
           })
         }
       </div>
-      <hr className="w-full h-2 text-border my-10" />
+      <hr className="w-full h-2 text-border my-10 theme-colors" />
+
+      <ThemeToggle />
     </aside>
   )
 }

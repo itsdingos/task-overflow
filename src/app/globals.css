@@ -56,7 +56,7 @@
 
   --color-background: var(--background);
   --color-surface: var(--surface);
-  --color-surface-elevated: var(--suface-elevated);
+  --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border);
 
   --color-text-primary: var(--text-primary);
@@ -69,4 +69,11 @@
   --color-info: var(--info);
 
   --font-sans: var(--font-geist);
+}
+
+@utility theme-colors {
+  @apply transition-colors duration-500 ease-in;
+}
+.dark .theme-toggle-icon {
+  transform: rotate(180deg);
 }
